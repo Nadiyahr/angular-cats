@@ -1,8 +1,9 @@
+import { AppState } from './../shared/types';
+import { getLimit } from './../shared/store/app.selectors';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
-import { setLimit } from '../shared/store/limit/limit.action';
-import { selectLimit } from '../shared/store/limit/limit.selector';
+import { setLimit } from '../shared/store/app.action';
 
 @Component({
   selector: 'app-limit-select',
@@ -12,11 +13,11 @@ import { selectLimit } from '../shared/store/limit/limit.selector';
 })
 export class LimitSelectComponent implements OnInit {
   limit: string = '10'
-  limitControl = new FormControl(this.limit)
+  limitControl = new FormControl('10')
   options: string[] = ['10', '15', '20', '25']
-  limit$ = this.store.pipe(select(selectLimit))
+  limit$ = this.store.pipe(select(getLimit))
 
-  constructor(private store: Store) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.limit$.subscribe(value => {
@@ -24,7 +25,7 @@ export class LimitSelectComponent implements OnInit {
     })
     this.limitControl.valueChanges.subscribe((value) => {
       if (typeof value === 'string') {
-        this.store.dispatch(setLimit({value: value}))
+        this.store.dispatch(setLimit({limit: value}))
       }
     })
   }

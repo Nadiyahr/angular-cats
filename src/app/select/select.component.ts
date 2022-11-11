@@ -4,7 +4,7 @@ import { selectBreeds } from '../shared/store/breed/breed.selector';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { FormControl } from '@angular/forms';
-import { setValue } from '../shared/store/value/value.action';
+import { setBreed } from '../shared/store/app.action';
 
 
 @Component({
@@ -26,10 +26,11 @@ export class SelectComponent implements OnInit {
     this.breeds$.subscribe(breeds => {
       this.breedsList = breeds
     })
-      this.breedsControl.valueChanges.subscribe((value) => {
-        if (typeof value === 'string') {
-          this.store.dispatch(setValue({value: value}))
-        }
+    this.breedsControl.valueChanges.subscribe((value) => {
+      if (typeof value === 'string') {
+        this.store.dispatch(setBreed({breedId: value}))
+      }
     })
+
   }
 }

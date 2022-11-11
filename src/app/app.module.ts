@@ -19,10 +19,9 @@ import { HeaderComponent } from './header/header.component';
 import { SelectComponent } from './select/select.component';
 import { CardComponent } from './card/card.component';
 import { CardListComponent } from './card-list/card-list.component';
-import { valueReducer } from './shared/store/value/value.reducer';
 import { LimitSelectComponent } from './limit-select/limit-select.component';
-import { limitReducer } from './shared/store/limit/limit.reducer';
 import { ApiService } from './shared/api.service';
+import { reducer } from './shared/store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -45,11 +44,10 @@ import { ApiService } from './shared/api.service';
     MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(reducer),
     EffectsModule.forRoot([]),
     StoreModule.forFeature('breedslist', breedReducer),
-    StoreModule.forFeature('breedvalue', valueReducer),
-    StoreModule.forFeature('limitnumber', limitReducer),
+    StoreModule.forFeature('getstate', reducer),
     EffectsModule.forFeature([BreedEffect])
   ],
   providers: [ApiService],

@@ -1,47 +1,47 @@
+import { getFullState } from './../shared/store/app.selectors';
+// import { getFullState } from './../shared/store/app.selectors';
+import { AppState } from './../shared/store/app.reducer';
 import { ApiService } from './../shared/api.service';
 import { CatImg } from '../shared/types';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { getValue } from '../shared/store/value/value.selector';
-import { selectLimit } from '../shared/store/limit/limit.selector';
 
 @Component({
   selector: 'app-card-list',
   templateUrl: './card-list.component.html',
-  styleUrls: ['./card-list.component.scss']
+  styleUrls: ['./card-list.component.scss'],
+  // encapsulation: ViewEncapsulation.None
 })
 export class CardListComponent implements OnInit {
   cardList: CatImg[] = []
   limit: string = '10'
   breedValue: string = ''
-  value$ = this.store.pipe(select(getValue))
-  limit$ = this.store.pipe(select(selectLimit))
+  // value$ = this.store.pipe(select(getValue))
+  // limit$ = this.store.pipe(select(selectLimit))
+  bradAndLimit$ = this.store.pipe(select(getFullState))
 
   constructor(
     private store: Store,
     private api: ApiService
-  ) { } 
+  ) {} 
 
   ngOnInit(): void {
-    this.getCards(this.breedValue, this.limit)
-    this.value$.subscribe(value => {
-      this.breedValue = value
-      this.getCards(value, this.limit)
-    })
-    this.limit$.subscribe(value => {
-      this.limit = value
-      this.getCards(this.breedValue, value)
+    this.bradAndLimit$.subscribe(obj => {
+      console.log(obj);
+      this.breedValue = obj.breedId
+      this.limit = obj.limit
+      this.getCards(obj)
     })
   }
 
-  getCards(id: string, limit: string) {
-    if (id) {
-      this.api.getCardsByBreed(id, limit)
+  getCards(obj: AppState) {
+    if (obj.breedId && obj.breedId.length > 0) {
+      this.api.getCardsByBreed(obj.breedId, obj.limit)
         .subscribe(data => {
           this.cardList = data
       })
     } else {
-      this.api.getRandomCards(limit)
+      this.api.getRandomCards(obj.limit)
         .subscribe(data => {
           this.cardList = data
         })
