@@ -1,6 +1,6 @@
 # AngularApp
 
-(Demo)[https://nadiyahr.github.io/angular-cat/]
+[Demo](https://nadiyahr.github.io/angular-cat/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 
@@ -26,4 +26,4 @@ ng deploy --base-href=angular-cat
 
 ###API
 
-(ThrCatAPI)[https://developers.thecatapi.com/]
+[ThrCatAPI](https://developers.thecatapi.com/)
