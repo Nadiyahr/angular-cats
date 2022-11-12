@@ -1,5 +1,4 @@
 import { getFullState } from './../shared/store/app.selectors';
-// import { getFullState } from './../shared/store/app.selectors';
 import { AppState } from './../shared/store/app.reducer';
 import { ApiService } from './../shared/api.service';
 import { CatImg } from '../shared/types';
@@ -16,8 +15,6 @@ export class CardListComponent implements OnInit {
   cardList: CatImg[] = []
   limit: string = '10'
   breedValue: string = ''
-  // value$ = this.store.pipe(select(getValue))
-  // limit$ = this.store.pipe(select(selectLimit))
   bradAndLimit$ = this.store.pipe(select(getFullState))
 
   constructor(

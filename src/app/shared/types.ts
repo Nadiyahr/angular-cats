@@ -4,9 +4,10 @@ export interface Breed {
     metric: string
   };
   id: string;
+  reference_image_id: string;
   name: string;
   cfa_url: string;
-  temperament: string[];
+  temperament: string;
   origin: string;
   country_codes: string;
   country_code: string;
@@ -42,9 +43,8 @@ export interface Breed {
     id: string;
     width: number;
     height: number
-    url: number;
+    url: string;
   }
-
 }
 
 export interface CatImg {
@@ -59,11 +59,4 @@ export interface CatImg {
 export interface SelectList {
   id: string;
   name: string;
-}
-
-export interface AppState {
-  apiStatus: string;
-  breedId: string;
-  itemsPerPage: number;
-  cards: CatImg[]
 }

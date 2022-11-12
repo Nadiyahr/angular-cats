@@ -1,10 +1,10 @@
 import { SelectList } from '../shared/types';
-import { invokeBreedsAPI } from '../shared/store/breed/breed.actions';
-import { selectBreeds } from '../shared/store/breed/breed.selector';
+import { invokeBreedsAPI } from '../shared/store/breeds/breeds.actions';
+import { selectBreeds } from '../shared/store/breeds/breeds.selector';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { FormControl } from '@angular/forms';
-import { setBreed } from '../shared/store/app.action';
+import { setBreed } from '../shared/store/app.actions';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { setBreed } from '../shared/store/app.action';
 
 })
 export class SelectComponent implements OnInit {
-  breedsControl = new FormControl('all')
+  breedsControl = new FormControl('')
   breedsList: SelectList[] = []
   breeds$ = this.store.pipe(select(selectBreeds))
 

@@ -1,6 +1,9 @@
 <mat-card class="card">
   <mat-card-header>
-    <mat-card-title>title</mat-card-title>
+    <mat-card-title>
+      <fa-icon [icon]="pawIcon"></fa-icon>
+      {{getBreed()}}
+    </mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="card.url" alt="Photo of a Shiba Inu"/>
+  <img  mat-card-xl-image [src]="card.url" class="img" alt="card.id"/>
 </mat-card>

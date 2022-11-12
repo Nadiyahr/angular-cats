@@ -2,9 +2,9 @@ import { select, Store } from '@ngrx/store';
 import { ApiService } from '../../api.service';
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from '@ngrx/effects'
-import { breedsFetchAPISuccess, invokeBreedsAPI } from './breed.actions';
+import { breedsFetchAPISuccess, invokeBreedsAPI } from './breeds.actions';
 import { EMPTY, mergeMap, map, withLatestFrom } from 'rxjs';
-import { selectBreeds } from './breed.selector';
+import { selectBreeds } from './breeds.selector';
 
 @Injectable()
 export class BreedEffect {

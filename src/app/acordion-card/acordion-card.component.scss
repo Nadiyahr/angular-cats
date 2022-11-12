@@ -1,0 +1,29 @@
+.accordion {
+  .header {
+    padding-right: 0;
+
+    .avatar {
+      background-size: cover;
+      object-position: 50%;
+      margin-right: 20px;
+    }
+  }
+}
+
+.fa-star {
+  color: #99c999;
+  align-self: flex-start;
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+  color: rgb(151, 151, 184);
+}
+
+.rank {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}

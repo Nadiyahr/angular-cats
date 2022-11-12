@@ -1,4 +1,11 @@
 .card {
-  width: 200px;
-  height: 340px;
+  max-width: 250px;
+
+  .img {
+    margin: 0 auto;
+  }
+}
+
+.fa-paw {
+  color: #c1c1f3;
 }

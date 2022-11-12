@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import * as AppActions from './app.action'
+import * as AppActions from './app.actions'
 
 export interface AppState {
     limit: string;
@@ -7,20 +7,14 @@ export interface AppState {
   }
 
 export const initialAppState: AppState = {
-  limit: '10',
+  limit: '12',
   breedId: ''
 }
 
 const appReducer = createReducer(
   initialAppState,
-  on(AppActions.setBreed, (state, {breedId}) => {
-    console.log('setBreed', state, {breedId: breedId, limit: state.limit})
-    return {...state, breedId}
-  }),
-  on(AppActions.setLimit, (state, {limit}) => {
-    console.log('setLimit',state, {breedId: state.breedId, limit: limit})
-    return {...state, limit}
-  })
+  on(AppActions.setBreed, (state, {breedId}) => ({...state, breedId})),
+  on(AppActions.setLimit, (state, {limit}) => ({...state, limit}))
 )
 
 export function reducer(state: AppState | undefined, action: Action) {

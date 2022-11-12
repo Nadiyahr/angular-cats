@@ -1,4 +1,4 @@
-import { SelectList } from '../../types';
+import { Breed } from './../../types';
 import { createAction, props } from '@ngrx/store';
 
 export const invokeBreedsAPI = createAction(
@@ -7,5 +7,5 @@ export const invokeBreedsAPI = createAction(
 
 export const breedsFetchAPISuccess = createAction(
   '[Breed API] Fetch API Success',
-  props<{allBreeds: SelectList[]}>()
+  props<{allBreeds: Breed[]}>()
 )

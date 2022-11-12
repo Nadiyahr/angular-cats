@@ -1,0 +1,40 @@
+<mat-accordion class="accordion">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header class="header">
+      <mat-panel-title>
+        <div
+          mat-card-avatar
+          [style.backgroundImage]= "'url(https://cdn2.thecatapi.com/images/' + details.reference_image_id + '.jpg )'"
+          class="avatar"
+        ></div>
+        {{details.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{details.origin}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{details. description}}</p>
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title *ngIf="!panelOpenState; else elseOpen" >
+          <fa-icon [icon]="starIcon" class="icon"></fa-icon>
+          &nbsp;&nbsp;
+          {{ details.temperament | slice:0:20}}...
+      </mat-panel-title>
+      <ng-template #elseOpen >
+        <div class="title" >
+          {{details.temperament | titlecase}}
+        </div>
+      </ng-template>
+    </mat-expansion-panel-header>
+    <div *ngFor="let rank of ranks" class="rank">
+      <span>{{rank[0] | titlecase}}</span>
+      <span><fa-icon
+        *ngFor="let i of getArrayFromNumber(rank[1])"
+        [icon]="starIcon"
+      ></fa-icon></span>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
