@@ -1,26 +1,25 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { Breed } from './../shared/types';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
-import { setBreed } from '../shared/store/app.actions';
-import { Store } from '@ngrx/store';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faWikipediaW } from '@fortawesome/free-brands-svg-icons';
+import { Breed } from '../shared/types';
 
 @Component({
-  selector: 'app-acordion-card',
-  templateUrl: './acordion-card.component.html',
-  styleUrls: ['./acordion-card.component.scss'],
+  selector: 'app-card-breed-id',
+  templateUrl: './card-breed-id.component.html',
+  styleUrls: ['./card-breed-id.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AcordionCardComponent implements OnInit {
+export class CardBreedIdComponent implements OnInit {
   @Input() details!: Breed
   panelOpenState = false
   starIcon = faStar
+  wikiIcon = faWikipediaW
   ranks!: [string, number][]
 
-  constructor(private store: Store) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.ranks = this.getEntryesOfRanks()
-    console.log(this.details);
   }
 
   getImg() {
@@ -38,9 +37,4 @@ export class AcordionCardComponent implements OnInit {
 
     return mapDetails
   }
-
-  goToBreed(id: string) {
-    this.store.dispatch(setBreed({breedId: id}))
-  }
-
 }

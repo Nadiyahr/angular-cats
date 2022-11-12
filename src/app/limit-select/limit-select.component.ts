@@ -28,5 +28,4 @@ export class LimitSelectComponent implements OnInit {
       }
     })
   }
-
 }

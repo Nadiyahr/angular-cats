@@ -15,10 +15,9 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('ngOnInit', this.card);
   }
 
   getBreed() {
-    return this.card.breeds[0].name
+    return this.card.breeds[0].name ? this.card.breeds[0].name : 'No breed'
   }
 }

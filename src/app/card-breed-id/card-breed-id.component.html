@@ -1,0 +1,57 @@
+<mat-card class="breed-card">
+  <div class="card-title">
+    <div
+      mat-card-avatar
+      [style.backgroundImage]= "'url(https://cdn2.thecatapi.com/images/' + details.reference_image_id + '.jpg )'"
+      class="avatar"
+    ></div>
+  <div>
+    <mat-card-title>
+      {{details.name}}
+    </mat-card-title>
+    <mat-card-subtitle>{{details.origin}}</mat-card-subtitle>
+  </div>
+  </div>
+  <mat-card-content>
+    <p class="subtitle">{{details.temperament | titlecase}}</p>
+    <p class="description">{{details. description}}</p>
+    <span>Lern More about {{details.name}}:</span>
+    <mat-card-actions>
+      <a mat-button
+        class="link"
+        target="_blank"
+        [href]="details.wikipedia_url"
+      >
+        <fa-icon [icon]="wikiIcon"></fa-icon>
+      </a>
+      <a mat-button
+        class="link"
+        target="_blank"
+        [href]="details.cfa_url"
+      >
+        CFA
+      </a>
+      <a mat-button
+        class="link"
+        target="_blank"
+        [href]="details.vcahospitals_url"
+      >
+        VCA
+      </a>
+      <a mat-button
+        class="link"
+        target="_blank"
+        [href]="details.vetstreet_url"
+      >
+        VetStreet
+      </a>
+     </mat-card-actions>
+    <div *ngFor="let rank of ranks" class="rank">
+      <span>{{rank[0] | titlecase}}</span>
+      <span><fa-icon
+        *ngFor="let i of getArrayFromNumber(rank[1])"
+        [icon]="starIcon"
+      ></fa-icon></span>
+    </div>
+  </mat-card-content>
+</mat-card>

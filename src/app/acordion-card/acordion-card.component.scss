@@ -19,11 +19,16 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 6px;
-  color: rgb(151, 151, 184);
+  color: #9797b8;
 }
 
 .rank {
   display: flex;
   justify-content: space-between;
   padding: 4px 0;
+  color: #9797b8;
+}
+
+.btn {
+  width: 100%;
 }

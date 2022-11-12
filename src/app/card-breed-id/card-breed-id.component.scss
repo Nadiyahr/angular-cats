@@ -1,0 +1,30 @@
+.breed-card {
+  color: #9797b8;
+}
+
+.avatar {
+  display: inline-block;
+  background-size: cover;
+  object-position: 50%;
+}
+
+.description {
+  font-size: medium;
+}
+
+.card-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  color: #888899;
+}
+
+.subtitle {
+  font-weight: 500;
+}
+
+.link {
+  font-family: serif;
+  font-size: 14px;
+  font-weight: 400;
+}

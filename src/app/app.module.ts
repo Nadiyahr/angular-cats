@@ -15,6 +15,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -31,6 +32,7 @@ import { CardListComponent } from './card-list/card-list.component';
 import { LimitSelectComponent } from './limit-select/limit-select.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { AcordionCardComponent } from './acordion-card/acordion-card.component';
+import { CardBreedIdComponent } from './card-breed-id/card-breed-id.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { AcordionCardComponent } from './acordion-card/acordion-card.component';
     CardListComponent,
     LimitSelectComponent,
     SideNavComponent,
-    AcordionCardComponent
+    AcordionCardComponent,
+    CardBreedIdComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,7 @@ import { AcordionCardComponent } from './acordion-card/acordion-card.component';
     MatSidenavModule,
     MatExpansionModule,
     MatIconModule,
+    MatButtonModule,
     StoreModule.forRoot(reducer),
     EffectsModule.forRoot([]),
     StoreModule.forFeature('breedslist', breedReducer),

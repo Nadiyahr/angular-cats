@@ -1,5 +1,5 @@
 mat-toolbar.mat-toolbar.mat-toolbar-single-row {
-  padding: 0 100px;
+  padding: 0 60px 0 40px;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,3 +10,13 @@ mat-toolbar.mat-toolbar.mat-toolbar-single-row {
   flex: 1 1 auto;
 }
 
+.spacer2 {
+  flex: 0.1
+}
+
+.avatar-card {
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size:cover;
+  margin-right: 20px;
+}

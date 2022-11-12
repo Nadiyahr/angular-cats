@@ -14,10 +14,18 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <p>{{details. description}}</p>
+    <button mat-stroked-button
+      color="primary"
+      (click)="goToBreed(details.id)"
+      class="btn"
+    >
+      More {{details.name}} images
+    </button>
   </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
+  <mat-expansion-panel 
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+  ><mat-expansion-panel-header>
       <mat-panel-title *ngIf="!panelOpenState; else elseOpen" >
           <fa-icon [icon]="starIcon" class="icon"></fa-icon>
           &nbsp;&nbsp;

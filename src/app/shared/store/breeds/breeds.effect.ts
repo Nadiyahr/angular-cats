@@ -24,7 +24,6 @@ export class BreedEffect {
         }
         return this.breedSevice.get().pipe(map((data) => breedsFetchAPISuccess({allBreeds: data})))
       })
-      
-      )
+    )
   )
 }

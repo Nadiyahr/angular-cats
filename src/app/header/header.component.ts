@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { faCat } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +10,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 })
 export class HeaderComponent implements OnInit {
-
+  pawIcon = faPaw
+  catIcon = faCat
   constructor() { }
 
   ngOnInit(): void {
