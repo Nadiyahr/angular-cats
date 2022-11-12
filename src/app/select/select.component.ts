@@ -31,6 +31,5 @@ export class SelectComponent implements OnInit {
         this.store.dispatch(setBreed({breedId: value}))
       }
     })
-
   }
 }
