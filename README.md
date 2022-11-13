@@ -21,9 +21,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Deploy on gh-pages
 
-*ng add angular-cli-ghpages
-*ng deploy --base-href=angular-cat
+* ng add angular-cli-ghpages
+* ng deploy --base-href=angular-cat
 
 ### API
 
-[ThrCatAPI](https://developers.thecatapi.com/)
+[TheCatAPI](https://developers.thecatapi.com/)
