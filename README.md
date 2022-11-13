@@ -4,7 +4,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 
-##Techstack
+## Techstack
 
 * Angular 14.2.9
 * NgRx 14.3.2
@@ -19,11 +19,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Node v16.18.1 and higher
 * NPM v8.19.2 and higher
 
-###Deploy on gh-pages
+### Deploy on gh-pages
 
-ng add angular-cli-ghpages
-ng deploy --base-href=angular-cat
+*ng add angular-cli-ghpages
+*ng deploy --base-href=angular-cat
 
-###API
+### API
 
 [ThrCatAPI](https://developers.thecatapi.com/)
