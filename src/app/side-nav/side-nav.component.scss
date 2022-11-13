@@ -1,11 +1,11 @@
 .container {
   min-height: 100vh;
+  margin-top: 60px;
   .side {
     width: 25%;
     padding: 10px;
     .card-container {
-      margin-top: 70px;
-      padding: 0 20px;
+      padding: 14px 20px;
       display: flex;
       flex-direction: column;
       gap: 20px;

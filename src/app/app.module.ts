@@ -16,6 +16,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -62,6 +63,7 @@ import { CardBreedIdComponent } from './card-breed-id/card-breed-id.component';
     MatExpansionModule,
     MatIconModule,
     MatButtonModule,
+    MatGridListModule,
     StoreModule.forRoot(reducer),
     EffectsModule.forRoot([]),
     StoreModule.forFeature('breedslist', breedReducer),
