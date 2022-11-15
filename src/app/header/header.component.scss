@@ -4,6 +4,10 @@ mat-toolbar.mat-toolbar.mat-toolbar-single-row {
   top: 0;
   left: 0;
   z-index: 2;
+
+  @media (max-width: 600px) {
+    padding: 0 20px;
+  }
 }
 
 .spacer {
@@ -12,6 +16,11 @@ mat-toolbar.mat-toolbar.mat-toolbar-single-row {
 
 .spacer2 {
   flex: 0.1
+}
+
+.span {
+  display: flex;
+  gap: 60px
 }
 
 .avatar-card {

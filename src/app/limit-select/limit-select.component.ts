@@ -8,7 +8,6 @@ import { setLimit } from '../shared/store/app.actions';
   selector: 'app-limit-select',
   templateUrl: './limit-select.component.html',
   styleUrls: ['./limit-select.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class LimitSelectComponent implements OnInit {
   limit: string = '10'

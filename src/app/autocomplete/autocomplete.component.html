@@ -1,0 +1,22 @@
+<form class="form">
+  <mat-form-field class="select" appearance="fill">
+    <mat-label>Breeds</mat-label>
+    <input
+      type="text"
+      placeholder="Start to serch"
+      aria-label="Breeds"
+      matInput
+      [formControl]="breedsControl"
+      [matAutocomplete]="auto"
+    >
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        (onSelectionChange)="updateBreedId(option.id)"
+        [value]="option"
+      >
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

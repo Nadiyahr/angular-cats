@@ -1,3 +1,14 @@
-.mat-form-field-infix {
-    padding: 4px;
+mat-form-field-infix {
+  padding: 4px;
+
+  @media (max-width: 600px) {
+    padding: 0;
+  }
+}
+
+mat-form-field { 
+  // @media (max-width: 600px) {
+    width: 80px;
+    // height: 0px;
+  // }
 }

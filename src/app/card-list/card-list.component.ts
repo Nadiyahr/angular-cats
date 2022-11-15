@@ -15,6 +15,7 @@ export class CardListComponent implements OnInit {
   cardList: CatImg[] = []
   limit: string = '10'
   breedValue: string = ''
+  breakpoint!: number
   bradAndLimit$ = this.store.pipe(select(getFullState))
 
   constructor(
@@ -28,6 +29,7 @@ export class CardListComponent implements OnInit {
       this.limit = obj.limit
       this.getCards(obj)
     })
+    this.breakpoint = (window.innerWidth <= 600) ? 1 : 3
   }
 
   getCards(obj: AppState) {
@@ -43,4 +45,8 @@ export class CardListComponent implements OnInit {
         })
     }
   }
+
+  handleSize(event: any) {
+    this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 3;
+    }
 }

@@ -18,6 +18,6 @@ export class CardComponent implements OnInit {
   }
 
   getBreed() {
-    return this.card.breeds[0].name ? this.card.breeds[0].name : 'No breed'
+    return this.card.breeds.length > 0 ? this.card.breeds[0].name : 'No breed'
   }
 }
