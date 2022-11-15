@@ -10,6 +10,7 @@
       [matAutocomplete]="auto"
     >
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option (onSelectionChange)="updateBreedId('')" [value]="''">All</mat-option>
       <mat-option
         *ngFor="let option of filteredOptions | async"
         (onSelectionChange)="updateBreedId(option.id)"
